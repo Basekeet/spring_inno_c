@@ -1,32 +1,26 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-long double vp, vf, a;
-const long double dx = 0.000001;
-
-long double time(long double x) {
-    return sqrt((1 - a) * (1 - a) + x * x) / vp + sqrt(a * a + (1 - x) * (1 - x)) / vf;
-}
-
-bool f(long double x) {
-    return time(x) < time(x + dx);
-}
 
 int main() {
-    cin >> vp >> vf >> a;
+    int n;
+    cin >> n;
 
-    long double l = 0;
-    long double r = 1;
+    int l = 1;
+    int r = n + 1;
+    while (true) {
+        int mid = (r + l) / 2;
+        cout << mid << endl;
+        int t;
+        cin >> t;
 
-    while (r - l > dx) {
-        long double mid = (r + l) / 2.0;
-
-        if (f(mid)) {
+        if (t == -1) {
             r = mid;
-        } else {
+        } else if (t == 1) {
             l = mid;
+        } else {
+            return 0;
         }
     }
 
-    cout << setprecision(15) << r;
 }
