@@ -18,12 +18,6 @@ int main() {
     long double l = 0;
     long double r = 1;
 
-    for (long double i = 0; i < 1.0; i += dx) {
-        if (f(i)) {
-            cout << i;
-        }
-    }
-
     while (r - l > dx) {
         long double mid = (r + l) / 2.0;
 
