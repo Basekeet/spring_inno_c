@@ -2,11 +2,11 @@
 
 using namespace std;
 
-const int NEG_INF = -10000000;
+const int NEG_INF = -100000000;
 
-int C[1001][1001];
-int dp[1001][10001];
-char dp_r[1001][1001];
+int C[1005][1005];
+int dp[1005][10005];
+char dp_r[1005][1005];
 
 int main() {
     int n, m;
@@ -18,7 +18,7 @@ int main() {
         }
     }
 
-    memset(dp, NEG_INF, sizeof(int) * 1001 * 1001);
+    memset(dp, NEG_INF, sizeof(int) * 1005 * 1005);
 
     dp[0][0] = 0;
     dp_r[0][0] = 0;
@@ -50,5 +50,5 @@ int main() {
             m--;
         }
     }
-    cout << ans;
+    cout << ans << "\n";
 }
